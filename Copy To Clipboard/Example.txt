@@ -1,0 +1,18 @@
+------------------------in Html File add this-------------------------
+<button onclick="CopyTextFromVariable('Your Text You Want To Copy It')">Copy Text</button>
+-------------------------in Java Script File--------------------------
+function CopyTextFromVariable(txt){
+//Save coming txt to variable
+    var TheTxt = txt;
+//text input
+    var MyData = document.createElement("textarea");
+    document.body.appendChild(MyData);
+//give text input value the coming text
+    MyData.value = txt;
+//Select Text Befor Copy
+    MyData.select();
+//Copy Command
+    document.execCommand("copy");
+//Remove text input after copy
+    document.body.removeChild(MyData);
+}
